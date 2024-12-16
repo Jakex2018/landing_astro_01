@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Service from "../components/Service.astro";
+import Welcome from "../components/Welcome.astro";
+import Expert from "../components/Expert.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="font-inter relative">
+		{/*HERO <Header />*/}
+		<Header />
+		{/*OUR SERVICE*/}
+		<Service />
+		{/*WELCOME */}
+		<Welcome />
+		{/*EXPERT CHEF */}
+		<Expert />
+		<div class="absolute top-[2%] left-[15%] h-[270vh] right-0 bottom-0">
+			<img src="/asset/Group 8.png" alt="" />
+		</div>
+	</main>
+</Layout>

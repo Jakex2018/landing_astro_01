@@ -1,0 +1,56 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<slot />
+		<script>
+			const navbar = document.getElementById("navbar");
+			window.onscroll = function () {
+				const scrolly = window.scrollY;
+				const getScroll = 100;
+				scrolly > getScroll
+					? navbar.classList.add("scrolled")
+					: navbar.classList.remove("scrolled");
+			};
+		</script>
+	</body>
+</html>
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	#navbar {
+		background-color: transparent;
+		transition-duration: 200ms;
+	}
+	#navbar.scrolled {
+		background-color: white;
+		border-radius: 20px;
+		box-shadow: 2px 2px 2px 4px rgb(0, 0, 0, 0.5);
+		padding: 10px 20px;
+		transition-duration: 200ms;
+	}
+</style>

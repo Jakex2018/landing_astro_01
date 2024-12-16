@@ -1,0 +1,46 @@
+---
+import SaladCard from "../models/SaladCard";
+---
+
+<section
+    class="relative w-full overflow-hidden md:h-[120vh] md:px-2 px-8 max-h-min-[200vh] text-center bg-[#F8FBDC] flex flex-col items-center pt-[50px]"
+>
+    <h4 class="text-[40px] leading-[50px] mb-3">
+        Our Delicious and Special Salad<br /><strong class="text-yellow-500"
+            >Asian</strong
+        >
+    </h4>
+    <p class="text-gray-500">
+        Food is any substance consumed by an organism for nutritional support.
+    </p>
+    <div class="flex lg:flex-row flex-col gap-6 mt-[70px]">
+        {
+            SaladCard.map((item) => (
+                <div class="w-[291px] flex flex-col items-center justify-start  h-[475px] shadow-xl rounded-tr-[50px] rounded-br-[50px] bg-white">
+                    <div class="relative">
+                        <img
+                            src={item.image}
+                            class="object-contain h-[300px] w-[300px]"
+                            alt=""
+                        />
+                        <div class="absolute font-bold top-[13%] left-[15%] rounded-full h-[40px] w-[40px] text-white flex justify-center items-center text-[13px] bg-black">
+                            $12
+                        </div>
+                    </div>
+
+                    <span class="font-bold">Special Salad</span>
+                    <p class="w-[200px] mt-5 font-medium">
+                        Food is any substance consumed by an organism for
+                        nutritional support.
+                    </p>
+                </div>
+            ))
+        }
+    </div>
+    <div class="absolute -top-[30%] left-0 z-40">
+        <img src="/asset/hoja.png" alt="" />
+    </div>
+    <div class="absolute -top-[100%] right-0">
+        <img src="/asset/elipse.png" alt="" />
+    </div>
+</section>
